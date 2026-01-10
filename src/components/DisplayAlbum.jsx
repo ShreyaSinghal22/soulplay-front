@@ -3,11 +3,17 @@ import NavBar from './navbar'
 import { useParams } from 'react-router-dom'
 import { albumsData, songsData } from '../assets/frontend-assets/assets';
 import {assets} from '../assets/frontend-assets/assets';
+import { useContext } from 'react';
+import { PlayerContext } from '../Context.jsx/PlayerContext.jsx';   
+import Songitem from './songitem.jsx';
+import Albumitem from './Albumitem.jsx';
+
 
 const DisplayAlbum = () => {
 
     const {id} = useParams();
     const albumData = albumsData[id];
+    const {playWithId} = useContext(PlayerContext);
 
   return (
     <>
@@ -20,7 +26,7 @@ const DisplayAlbum = () => {
                 <h4 className=''>{albumData.desc}</h4>
                 <p className='mt-1'>
                     <img className='inline-block w-12' src={assets.logo_icon} alt="" />
-                    <b>Souplay</b>
+                    <b> Soulplay</b>
                     {' '}• 2025 • 10 songs, 38 min 45 sec
                     • 1,234,567 likes
                 </p>
@@ -35,7 +41,7 @@ const DisplayAlbum = () => {
         <hr/>
         {
             songsData.map((item,index)=>(
-                <div key={index} className='grid grid-cols-3 sm:grid-cols-4 items-center pl-2 py-4 hover:bg-[#ffffff26] rounded cursor-pointer'>
+                <div onClick={()=>playWithId(item.id)} key={index} className='grid grid-cols-3 sm:grid-cols-4 items-center pl-2 py-4 hover:bg-[#ffffff26] rounded cursor-pointer'>
                     <p className='text-white'><b className='mr-4 text-[#a7a7a7]'>{index + 1}</b>
                     <img className='inline mr-5 w-10' src={item.image} alt="" />
                     {item.name}

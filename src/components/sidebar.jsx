@@ -1,15 +1,19 @@
 import React from 'react'
 import { assets } from '../assets/frontend-assets/assets.js';
 import '../index.css';
+import { useNavigate } from 'react-router-dom';
 
 const Sidebar = () => {
+
+  const navigateTo = useNavigate();
+
   return (
     /* h-screen ensures it takes the full vertical space */
     <div className='w-[25%] h-full p-2 flex-col gap-2 text-gray-400 bg-[#121212] hidden lg:flex'>
       
       {/* TOP SECTION: Home & Search */}
       <div className=' h-[15%] rounded-lg flex flex-col justify-around bg-[#242424]'>
-        <div className='flex items-center gap-3 pl-8 cursor-pointer hover:text-white transition'>
+        <div onClick={()=>navigateTo('/')} className='flex items-center gap-3 pl-8 cursor-pointer hover:text-white transition'>
           <img className="w-6" src={assets.home_icon} alt="Home" />
           <p className="font-bold">Home</p>
         </div>
