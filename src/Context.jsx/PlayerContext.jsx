@@ -2,7 +2,6 @@ import { createContext,useState,useRef, useEffect} from 'react';
 import { songsData } from '../assets/frontend-assets/assets';
 
  const PlayerContext = createContext();
- export {PlayerContext};
 
 const PlayerContextProvider = (props) => {
 
@@ -130,4 +129,5 @@ const PlayerContextProvider = (props) => {
     )
 }
 
+export {PlayerContext};
 export default PlayerContextProvider;

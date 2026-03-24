@@ -25,13 +25,13 @@ const Sidebar = () => {
 
       {/* BOTTOM SECTION: Library */}
       <div className='bg-[#121212] h-[85%] rounded-lg'>
-        <div className=' flex p-4 justify-between items-center '>
-          <div className='flex items-center gap-3 p-2'>
+        <div className=' flex p-3 justify-between items-center '>
+          <div className='flex w-full items-center gap-3 p-2'>
             <img className="w-8" src={assets.stack_icon} alt="Library" />
-            <p className="font-semibold hover:text-white transition text-gray-400">Your Library</p>
+            <p className="font-semibold hover:text-white transition cursor-pointer text-gray-400">Your Library</p>
           </div>
 
-          <div className='flex items-center gap-3 p-2.5'>
+          <div className='flex justify-between gap-6 p-2.5'>
             <img className="w-5 cursor-pointer opacity-70 hover:opacity-100" src={assets.arrow_icon} alt="" />
             <img className="w-5 cursor-pointer opacity-70 hover:opacity-100" src={assets.plus_icon} alt="" />
           </div>
